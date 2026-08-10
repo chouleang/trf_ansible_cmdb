@@ -30,7 +30,7 @@ output "instance_id" {
 }
 
 output "instance_public_ip" {
-  description = "Public IP — SSH with: ssh -i <key> ubuntu@<this_ip>"
+  description = "Public IP — SSH with: ssh -i <your-key.pem> ubuntu@<this-ip>"
   value       = module.ec2_instance.public_ip
 }
 

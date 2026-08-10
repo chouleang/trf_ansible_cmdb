@@ -1,0 +1,3 @@
+---
+- name: Bootstrap Docker and Nginx
+  hosts: 

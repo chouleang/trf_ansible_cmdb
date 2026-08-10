@@ -90,3 +90,17 @@ variable "tags" {
     ManagedBy   = "terraform"
   }
 }
+
+# ==============================================================================
+# ANSIBLE CONTROLLER
+# ==============================================================================
+variable "controller_name" {
+  description = "Name tag for the Ansible controller EC2 instance"
+  type        = string
+  default     = "dev-ansible-controller"
+} 
+variable "controller_instance_type" {
+  description = "EC2 instance type for the Ansible controller"
+  type        = string
+  default     = "t3.micro"
+}

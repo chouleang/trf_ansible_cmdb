@@ -1,0 +1,11 @@
+# Placeholder — Ansible runs locally via cloud-init for now.
+# When using a control node, add your hosts here:
+#
+# [dev]
+# <instance-ip> ansible_user=ubuntu
+#
+# [staging]
+# ...
+#
+# [prod]
+# ...
