@@ -129,7 +129,7 @@ module "controller" {
   associate_public_ip_address = true
   root_volume_size            = 20
   root_volume_type            = "gp3"
-  user_data                   = templatefile("${path.root}/templates/user_data_controller.sh.tpl", {
+  user_data                   = templatefile("../../templates/user_data_controller.sh.tpl", {
     target_ip   = module.web.private_ip
     private_key = module.key_pair.private_key_pem
   })

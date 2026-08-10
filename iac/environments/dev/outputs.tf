@@ -26,7 +26,7 @@ output "private_subnet_ids" {
 # ==============================================================================
 output "controller_instance_id" {
   description = "EC2 instance ID"
-  value       = module.controller.instance_id
+  value       = module.controller.id
 }
 output "controller_instance_public_ip" {
   description = "Public IP — SSH with: ssh -i <your-key.pem> ubuntu@<this-ip>"
@@ -34,7 +34,7 @@ output "controller_instance_public_ip" {
 }
 output "instance_id" {
   description = "EC2 instance ID"
-  value       = module.web.instance_id
+  value       = module.web.id
 }
 
 output "instance_public_ip" {
