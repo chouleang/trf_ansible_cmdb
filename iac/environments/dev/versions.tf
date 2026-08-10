@@ -6,7 +6,7 @@ terraform {
       version = "~>5.0"
     }
   }
-    cloud {
+  cloud {
     hostname     = "app.terraform.io"
     organization = "trf-ansible-cmdb"
 

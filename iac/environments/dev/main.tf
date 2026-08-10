@@ -57,7 +57,7 @@ module "key_pair" {
 # --- Controller SG: SSH from your IP ---
 resource "aws_security_group" "controller_sg" {
   name        = "dev-controller-sg"
-  description = "Ansible controller — SSH inbound"
+  description = "Ansible controller  SSH inbound"
   vpc_id      = module.vpc.vpc_id
 
   ingress {
@@ -82,7 +82,7 @@ resource "aws_security_group" "controller_sg" {
 # --- Web SG: SSH from controller only + HTTP from anywhere ---
 resource "aws_security_group" "web_sg" {
   name        = "dev-web-sg"
-  description = "Web server — SSH from controller only + HTTP public"
+  description = "Web server SSH from controller only + HTTP public"
   vpc_id      = module.vpc.vpc_id
 
   ingress {
@@ -129,7 +129,7 @@ module "controller" {
   associate_public_ip_address = true
   root_volume_size            = 20
   root_volume_type            = "gp3"
-  user_data                   = templatefile("../../templates/user_data_controller.sh.tpl", {
+  user_data = templatefile("../../templates/user_data_controller.sh.tpl", {
     target_ip   = module.web.private_ip
     private_key = module.key_pair.private_key_pem
   })
@@ -150,5 +150,5 @@ module "web" {
   root_volume_size            = var.root_volume_size
   root_volume_type            = var.root_volume_type
   user_data                   = null
-  tags = merge({ Role = "web-server" }, var.tags)
+  tags                        = merge({ Role = "web-server" }, var.tags)
 }
