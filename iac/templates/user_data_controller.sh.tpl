@@ -25,7 +25,7 @@ apt-add-repository -y ppa:ansible/ansible
 apt-get update -y
 apt-get install -y ansible python3-pip
 pip3 install docker
-
+ansible-galaxy collection install community.docker
 # --- Clone the repo to get the latest playbook ---
 echo "[+] Cloning repo..."
 REPO_DIR="/home/ubuntu/trf_ansible_cmdb"
@@ -41,6 +41,6 @@ EOF
 
 # --- Run the playbook from the cloned repo ---
 echo "[+] Running Ansible playbook against $TARGET_IP..."
-ansible-playbook "$REPO_DIR/ansible/playbooks/docker-nginx.yml"
+ansible-playbook -i /etc/ansible/inventory "$REPO_DIR/ansible/playbooks/docker-nginx.yml"
 
 echo "[✓] Bootstrap complete."
