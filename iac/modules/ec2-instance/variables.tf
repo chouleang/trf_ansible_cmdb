@@ -15,8 +15,8 @@ variable "subnet_id" {
   type        = string
 }
 variable "vpc_security_group_ids" {
-    description = "List of VPC security group IDs to associate with the EC2 instance"
-    type        = list(string)
+  description = "List of VPC security group IDs to associate with the EC2 instance"
+  type        = list(string)
 }
 variable "key_name" {
   description = "The name of the key pair to use for the EC2 instance"
@@ -25,7 +25,7 @@ variable "key_name" {
 variable "tags" {
   description = "A map of tags to assign to the EC2 instance"
   type        = map(string)
-  default     = {}      
+  default     = {}
 }
 variable "user_data" {
   description = "The user data to provide when launching the EC2 instance"
