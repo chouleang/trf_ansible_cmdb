@@ -7,7 +7,7 @@ echo "========================================"
 echo " Ansible Controller Bootstrap"
 echo " Target: $TARGET_IP"
 echo "========================================"
-
+export ANSIBLE_HOST_KEY_CHECKING=False
 # --- Write Ansible SSH private key (controller → target) ---
 echo "[+] Writing Ansible SSH key..."
 mkdir -p /home/ubuntu/.ssh
