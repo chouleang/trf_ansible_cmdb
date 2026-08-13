@@ -9,11 +9,11 @@
         update_cache: true
         cache_valid_time: 3600
 
-    - name: Install Docker
+    - name: Install Docker and Python SDK
       apt:
         name:
           - docker.io
-          - docker-compose-v2
+          - python3-docker
         state: present
 
     - name: Start and enable Docker
